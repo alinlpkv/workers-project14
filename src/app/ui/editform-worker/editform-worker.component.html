@@ -1,0 +1,58 @@
+<form [formGroup]="changeForm">
+<div class="row mb-3 mt-3">
+    <div class="col-12">
+    <h5>Редактировать сотрудника по id</h5>
+    <div class="row">
+      <div class="col-4 mb-2">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="id"
+          #localID
+        />
+      </div>
+      <div class="col-3 ">
+        <button class="btn btn-outline-primary btn" (click)="findWorker()">Найти</button>
+      </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <input
+        type="text"
+        class="form-control"
+        value={{name}}
+        formControlName="name"
+        #n
+      />
+    </div>
+    <div class="col-5">
+      <input
+        type="text"
+        class="form-control"
+        value={{surname}}
+        formControlName="surname"
+        #s
+      />
+    </div>
+    <div class="col-5 mt-2">
+      <input
+      [textMask]="{mask: mask}"
+        type="text"
+        class="form-control"
+        value={{phone}}
+        formControlName="phone"
+      />
+    </div>
+    <div class="col-5 mt-2">
+      <select class="custom-select" formControlName="type">
+         <option [ngValue]="myWorkerType.programmer">Программист</option>
+        <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+        <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+        <option [ngValue]="myWorkerType.manager">Менеджер</option>
+      </select>
+    </div>
+    <div class="col-12 mt-1">
+      <button class="btn btn-outline-success btn-sm"  [disabled]="changeForm.invalid" (click)="onEditWorker()">Применить</button>
+    </div>
+  </div>
+  </form>
