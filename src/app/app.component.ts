@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'Список сотрудников';
   workers: MyWorker[];
   myWorkerType = MyWorkerType;
+  searchStr='';
 
   constructor(private httpWorkerService: HttpWorkerService) { }
 

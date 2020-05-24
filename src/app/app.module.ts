@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { TableWorkersComponent } from './ui/table-workers/table-workers.component';
 import { AddformWorkerComponent } from './ui/addform-worker/addform-worker.component';
 import { EditformWorkerComponent } from './ui/editform-worker/editform-worker.component';
+import { AppFindWorkerPipe } from './shared/pipes/app-find-worker.pipe';
+import { SearchWorkerComponent } from './ui/search-worker/search-worker.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { EditformWorkerComponent } from './ui/editform-worker/editform-worker.co
     TableWorkersComponent,
     AddformWorkerComponent,
     EditformWorkerComponent,
-    
+    AppFindWorkerPipe,
+    SearchWorkerComponent,
+ 
   ],
   imports: [
     BrowserModule,

@@ -10,20 +10,29 @@
   <app-editform-worker  
   (editWorker)="onEditById($event)"></app-editform-worker>
 
+  <!-- <div class="col"> -->
+    <h5>Поиск по имени и фамилии:</h5>
+    <div class="row mb-4" >
+        <div class="col-6">
+            <input type="search" class="form-control" placeholder="Имя и фамилия" [(ngModel)]="searchStr"/>
+        </div>
+    </div>
+
+  <!-- <app-search-worker></app-search-worker> -->
   <app-table-workers [title]="'Программисты'"
-  [workers]="getByType(myWorkerType.programmer)"
-  (deleteWorker)="onDeleteById($event)"
+  [workers]="getByType(myWorkerType.programmer) | appFindWorker: searchStr"
+  (deleteWorker)="onDeleteById($event)" 
   ></app-table-workers>
   <app-table-workers [title]="'Дизайнеры'"
-  [workers]="getByType(myWorkerType.designer)"
+  [workers]="getByType(myWorkerType.designer) | appFindWorker: searchStr"
   (deleteWorker)="onDeleteById($event)"
   ></app-table-workers>
   <app-table-workers [title]="'Рекламщики'"
-  [workers]="getByType(myWorkerType.copywriter)"
+  [workers]="getByType(myWorkerType.copywriter) | appFindWorker: searchStr"
   (deleteWorker)="onDeleteById($event)"
   ></app-table-workers>
   <app-table-workers [title]="'Менеджеры'"
-  [workers]="getByType(myWorkerType.manager)"
+  [workers]="getByType(myWorkerType.manager) | appFindWorker: searchStr"
   (deleteWorker)="onDeleteById($event)"
   ></app-table-workers>
 </div>
